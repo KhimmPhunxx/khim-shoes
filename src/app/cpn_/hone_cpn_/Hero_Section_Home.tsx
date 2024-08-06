@@ -33,7 +33,7 @@ const Hero_Section_Home = () => {
     ]
 
     return (
-        <main className=' w-full h-[640px]'>
+        <main className=' w-full h-[200px] lg:h-[640px]'>
             <section className=' w-full h-full'>
                 <Carousel
                     plugins={[plugin.current]}
@@ -41,11 +41,11 @@ const Hero_Section_Home = () => {
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
                 >
-                    <CarouselContent className=' h-[640px] '>
+                    <CarouselContent className=' h-[200px] lg:h-[640px] '>
                         {
                             list.map((item, index) => (
-                                <CarouselItem key={index} className=' h-[640px]'>
-                                    <Card className=' h-[640px]'>
+                                <CarouselItem key={index} className='h-[200px] lg:h-[640px]'>
+                                    <Card className='h-[200px] lg:h-[640px]'>
                                         <CardContent className=' h-full p-0'>
                                             <img src={item.image} alt="" className=' h-full w-full object-cover' />
                                         </CardContent>

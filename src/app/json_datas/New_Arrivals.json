@@ -1,0 +1,40 @@
+{
+    "new_arrivals" : [
+        {
+            "id": 1,
+            "name": "Nike Air Max 270",
+            "desc": "Brand new Nike Air Max 270",
+            "price": 120,
+            "ds_price": 100,
+            "status": "New",
+            "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/trm9jrvijzuqzmkyah2t/air-max-270-mens-shoes-KkLcGR.png"
+        },
+        {
+            "id": 2,
+            "name": "Adidas Yeezy Boost 350",
+            "desc": "Local made Adidas Yeezy Boost 350",
+            "price": 220,
+            "ds_price": 200,
+            "status": "New",
+            "image": "https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/558271.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Adidas Superstar",
+            "desc": "Brand new Adidas Superstar",
+            "price": 160,
+            "ds_price": 140,
+            "status": "New",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_Shoes_Black_EG4959_01_standard.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Vans Old Skool",
+            "desc": "Made in USA Vans Old Skool",
+            "price": 310,
+            "ds_price": 290,
+            "status": "New",
+            "image": "https://images.vans.com/is/image/VansEU/VN000D3HY28-HERO?$PDP-MEDIA-SET-PREVIEW-RESOLUTION$"
+        }  
+    ]
+}

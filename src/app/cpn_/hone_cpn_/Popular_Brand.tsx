@@ -26,7 +26,7 @@ const Popular_Brand = () => {
             <section className=' max-w-full mx-auto'>
                 <div className=' flex flex-col space-y-3'>
                     <h1 className=' text-4xl font-semibold text-gray-900 text-center'> Popular Brand </h1>
-                    <p className=' text-sm text-gray-500 w-[720px] text-center mx-auto'>
+                    <p className=' text-sm text-gray-500 md:w-[720px] text-center mx-auto'>
                         As per the shoes are concerned, there are many brands available in the market but with creative designs, popular styles and quality materials Nike tends to dominate the footwear sector as compared to other brands.
                     </p>
                 </div>

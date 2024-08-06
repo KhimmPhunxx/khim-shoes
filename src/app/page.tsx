@@ -10,7 +10,7 @@ export default function Home() {
       <section>
         <Hero_Section_Home />
       </section>
-      <section className=" py-20">
+      <section className="py-10 md:py-20">
         <News_Arrival />
       </section>
       <section className="pb-20">

@@ -2,8 +2,24 @@
 
 import React from 'react'
 import { BiCartAdd } from 'react-icons/bi'
+import { LuPlusCircle } from "react-icons/lu";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import New_Arrivals_Data from './../../json_datas/New_Arrivals.json'
+import './main_home.css'
+
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 
 const News_Arrival = () => {
 
@@ -15,45 +31,6 @@ const News_Arrival = () => {
         )
     }, [])
 
-    const shoes_list = [
-        {
-            id : 1,
-            name : 'Nike Air Max 270',
-            desc: 'Brand new Nike Air Max 270',
-            price: 120,
-            ds_price: 100,
-            status: 'New',
-            image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/trm9jrvijzuqzmkyah2t/air-max-270-mens-shoes-KkLcGR.png'
-        },
-        {
-            id : 2,
-            name : 'Adidas Yeezy Boost 350',
-            desc: 'Local made Adidas Yeezy Boost 350',
-            price: 220,
-            ds_price: 200,
-            status: 'New',
-            image: 'https://preview.thenewsmarket.com/Previews/ADID/StillAssets/320x320/558271.jpg'
-        },
-        {
-            id : 3,
-            name : 'Adidas Superstar',
-            desc: 'Brand new Adidas Superstar',
-            price: 160,
-            ds_price: 140,
-            status: 'New',
-            image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Superstar_Shoes_Black_EG4959_01_standard.jpg'
-        },
-        {
-            id : 4,
-            name : 'Vans Old Skool',
-            desc: 'Made in USA Vans Old Skool',
-            price: 310,
-            ds_price: 290,
-            status: 'New',
-            image: 'https://images.vans.com/is/image/VansEU/VN000D3HY28-HERO?$PDP-MEDIA-SET-PREVIEW-RESOLUTION$'
-        }
-    ]
-
     return (
         <main className=' w-full mx-auto'>
             <section className=' max-w-7xl mx-auto'>
@@ -64,24 +41,68 @@ const News_Arrival = () => {
                     </p>
                 </div>
                 <div className=' mt-8'>
-                    <div className=' grid md:grid-cols-4 gap-10'>
+                    <div className=' grid md:grid-cols-4 gap-10 px-8 md:px-0'>
+
                         {
-                            shoes_list.map((shoe, index) => (
-                                <div key={index} className=' relative overflow-hidden' data-aos='fade-up'>
-                                    <img src={shoe.image} alt="" className=' cursor-pointer hover:scale-105 duration-300 w-full h-[300px] object-cover' />
+                            New_Arrivals_Data.new_arrivals.map((shoe, index) => (
+                                <div key={index} className='content relative overflow-hidden' data-aos='fade-up'>
+
+                                    <div className="view-item absolute opacity-0 top-5 right-0 duration-300">
+
+
+                                        <AlertDialog>
+                                            <AlertDialogTrigger asChild>
+                                                <button>
+                                                    <LuPlusCircle className="plus-icon text-gray-700 text-2xl" />
+                                                </button>
+                                            </AlertDialogTrigger>
+                                            <AlertDialogContent className='md:w-[700px] w-[300px] bg-gray-100 p-2 md:p-8'>
+
+                                                {/* List Detail Product by One */}
+                                                <div className=' md:flex space-x-5'>
+                                                    <div className=' w-full h-56 md:h-96 md:w-1/2'>
+                                                        <img src={shoe.image} alt="" className=' w-full h-full object-cover' />
+                                                    </div>
+                                                    <div className=' w-1/2 space-y-5 h-full flex flex-col lg:justify-between'>
+                                                        <div className=' space-y-2'>
+                                                            <h1 className=' text-xl md:text-3xl font-semibold'>{shoe.name}</h1>
+                                                            <p className=' text-sm text-gray-600'>{shoe.desc}</p>
+                                                            <div className=' flex space-x-3'>
+                                                                <p className=' text-xl text-red-600 line-through'>${shoe.price}</p>
+                                                                <p className=' text-xl text-slate-800'>${shoe.ds_price}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div className=' md:flex space-y-3 md:space-x-2'>
+                                                            <button className=' bg-white border font-medium text-sm text-black py-3 px-4 rounded-sm'>Add to Cart</button>
+                                                            <button className=' bg-white border font-medium text-sm text-black py-3 px-4 rounded-sm'>Buy Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <AlertDialogCancel>
+                                                    <button>Cancel</button>
+                                                </AlertDialogCancel>
+                                            </AlertDialogContent>
+                                        </AlertDialog>
+                                    </div>
+
+                                    <div className=' w-full h-[300px] overflow-hidden'>
+                                        <img src={shoe.image} alt="" className=' cursor-pointer duration-300 w-full h-full object-cover' />
+                                    </div>
                                     <div className=' absolute top-0 left-0 bg-slate-800 text-white px-2 py-1 rounded-br-lg'>
                                         {shoe.status}
                                     </div>
                                     <div className=' p-2 space-y-2'>
                                         <h1 className=' text-xl font-semibold'>{shoe.name}</h1>
                                         <p className=' text-sm text-gray-600'>{shoe.desc}</p>
-                                       <div className=' flex space-x-3'>
-                                             <p className=' text-md text-red-600 line-through'>${shoe.price}</p>
-                                             <p className=' text-md text-slate-800'>${shoe.ds_price}</p>
-                                       </div>
+                                        <div className=' flex space-x-3'>
+                                            <p className=' text-md text-red-600 line-through'>${shoe.price}</p>
+                                            <p className=' text-md text-slate-800'>${shoe.ds_price}</p>
+                                        </div>
                                     </div>
                                     <button className=' w-full font-bold hover:bg-slate-800 text-slate-800 hover:text-white duration-200 uppercase text-xs bg-slate-100 justify-center flex py-2 rounded-sm'>
-                                       Buy Now 
+                                        <BiCartAdd className=' text-lg' />
+                                        <span className=' ml-2 flex items-center'>Add to Cart</span>
                                     </button>
                                 </div>
                             ))
